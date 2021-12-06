@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-topbar-text",
-  "version": "0.1.0",
+  "version": "0.6.1",
   "description": "JupyterLab extension to display arbitrary text in the top bar",
   "keywords": [
     "jupyter",
@@ -47,7 +47,8 @@
   },
   "dependencies": {
     "@jupyterlab/application": "^3.1.0",
-    "@jupyterlab/settingregistry": "^3.1.0"
+    "@jupyterlab/settingregistry": "^3.1.0",
+    "jupyterlab-topbar": "^0.6.0"
   },
   "devDependencies": {
     "@jupyterlab/builder": "^3.1.0",
@@ -55,7 +56,7 @@
     "@typescript-eslint/parser": "^4.8.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4", 
+    "eslint-plugin-prettier": "^3.1.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.1",
     "rimraf": "^3.0.2",
@@ -69,7 +70,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "jupyterlab": { 
+  "jupyterlab": {
     "extension": true,
     "outputDir": "jupyterlab_topbar_text/labextension",
     "schemaDir": "schema"
