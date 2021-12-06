@@ -1,0 +1,8 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "jupyterlab-topbar-text",
+  "description": "jupyterlab-topbar-text settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
