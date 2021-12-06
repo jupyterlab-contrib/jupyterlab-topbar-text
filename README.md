@@ -1,8 +1,8 @@
-# jupyterlab_topbar_text
+# jupyterlab-topbar-text
 
 [![Github Actions Status](https://github.com/jupyterlab-contrib/jupyterlab-topbar-text/workflows/Build/badge.svg)](https://github.com/jupyterlab-contrib/jupyterlab-topbar-text/actions/workflows/build.yml)[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyterlab-topbar-text/main?urlpath=lab)
 
-JupyterLab extension to display arbitrary text in the top bar
+JupyterLab extension to display arbitrary text in the top bar.
 
 ![topbar-text](https://user-images.githubusercontent.com/591645/144933720-67727de2-9a63-49da-8ddc-26f5d8a16a99.gif)
 
@@ -67,7 +67,7 @@ jupyter lab build --minimize=False
 ### Development uninstall
 
 ```bash
-pip uninstall jupyterlab_topbar_text
+pip uninstall jupyterlab-topbar-text
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
