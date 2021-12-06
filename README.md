@@ -4,7 +4,7 @@
 
 JupyterLab extension to display arbitrary text in the top bar
 
-
+![topbar-text](https://user-images.githubusercontent.com/591645/144933720-67727de2-9a63-49da-8ddc-26f5d8a16a99.gif)
 
 ## Requirements
 
@@ -15,7 +15,7 @@ JupyterLab extension to display arbitrary text in the top bar
 To install the extension, execute:
 
 ```bash
-pip install jupyterlab_topbar_text
+pip install jupyterlab-topbar-text
 ```
 
 ## Uninstall
@@ -23,9 +23,8 @@ pip install jupyterlab_topbar_text
 To remove the extension, execute:
 
 ```bash
-pip uninstall jupyterlab_topbar_text
+pip uninstall jupyterlab-topbar-text
 ```
-
 
 ## Contributing
 

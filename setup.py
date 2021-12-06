@@ -10,20 +10,22 @@ import setuptools
 HERE = Path(__file__).parent.resolve()
 
 # The name of the project
-name = "jupyterlab_topbar_text"
+NAME = "jupyterlab-topbar-text"
+PACKAGE = "jupyterlab-topbar-text".replace("-", "_")
 
-lab_path = (HERE / name.replace("-", "_") / "labextension")
+lab_path = HERE / PACKAGE / "labextension"
 
 # Representative files that should exist after a successful build
-ensured_targets = [
-    str(lab_path / "package.json"),
-    str(lab_path / "static/style.js")
-]
+ensured_targets = [str(lab_path / "package.json"), str(lab_path / "static/style.js")]
 
 labext_name = "jupyterlab-topbar-text"
 
 data_files_spec = [
-    ("share/jupyter/labextensions/%s" % labext_name, str(lab_path.relative_to(HERE)), "**"),
+    (
+        "share/jupyter/labextensions/%s" % labext_name,
+        str(lab_path.relative_to(HERE)),
+        "**",
+    ),
     ("share/jupyter/labextensions/%s" % labext_name, str("."), "install.json"),
 ]
 
@@ -39,7 +41,7 @@ version = (
 )
 
 setup_args = dict(
-    name=name,
+    name=NAME,
     version=version,
     url=pkg_json["homepage"],
     author=pkg_json["author"]["name"],
@@ -64,6 +66,7 @@ setup_args = dict(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Framework :: Jupyter",
         "Framework :: Jupyter :: JupyterLab",
         "Framework :: Jupyter :: JupyterLab :: 3",
@@ -73,20 +76,22 @@ setup_args = dict(
 )
 
 try:
-    from jupyter_packaging import (
-        wrap_installers,
-        npm_builder,
-        get_data_files
-    )
+    from jupyter_packaging import wrap_installers, npm_builder, get_data_files
+
     post_develop = npm_builder(
         build_cmd="install:extension", source_dir="src", build_dir=lab_path
     )
-    setup_args["cmdclass"] = wrap_installers(post_develop=post_develop, ensured_targets=ensured_targets)
+    setup_args["cmdclass"] = wrap_installers(
+        post_develop=post_develop, ensured_targets=ensured_targets
+    )
     setup_args["data_files"] = get_data_files(data_files_spec)
 except ImportError as e:
     import logging
+
     logging.basicConfig(format="%(levelname)s: %(message)s")
-    logging.warning("Build tool `jupyter-packaging` is missing. Install it with pip or conda.")
+    logging.warning(
+        "Build tool `jupyter-packaging` is missing. Install it with pip or conda."
+    )
     if not ("--name" in sys.argv or "--version" in sys.argv):
         raise e
 
