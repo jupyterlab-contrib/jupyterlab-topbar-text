@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-topbar-text",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "JupyterLab extension to display arbitrary text in the top bar",
   "keywords": [
     "jupyter",
@@ -76,7 +76,9 @@
     "schemaDir": "schema"
   },
   "jupyter-releaser": {
-    "skip": ["check-links"],
+    "skip": [
+      "check-links"
+    ],
     "hooks": {
       "before-build-npm": [
         "python -m pip install jupyterlab~=3.1",
